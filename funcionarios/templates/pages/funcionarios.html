@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Listar Funcionarios{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block content %}
+    <h2>Funcionarios</h2>
+    <ul>
+        {% for funcionario in funcionarios %}
+            <li>{{funcionario}}</li>
+        {% empty %}
+            <li>O departamento não possui funcionarios ainda</li>
+        {% endfor%}
+    </ul>
+    {% endblock %}
+  </main>
+</body>
+</html>

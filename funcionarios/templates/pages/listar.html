@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Listar Empresas{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block content %}
+    <h2>Empresas</h2>
+    <ul>
+      {% for empresa in empresas %}
+        <li><a href="{% url 'empresa' empresa.id %}">{{empresa}}</a></li>
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </main>
+</body>
+</html>

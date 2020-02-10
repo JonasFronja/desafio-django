@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Olá {{ user.username }}!
+  <p><a href="funcionarios">Visualizar minha empresas</a></p>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>Você não está logado ainda</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
